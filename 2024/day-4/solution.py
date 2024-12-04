@@ -54,6 +54,42 @@ def top_right(input, row, col, rows, cols):
     return substr
 
 
+def top_left(input, row, col, rows, cols):
+    if (row < 3) or (col < 3):
+        return ""
+    substr = (
+        input[row][col]
+        + input[row - 1][col - 1]
+        + input[row - 2][col - 2]
+        + input[row - 3][col - 3]
+    )
+    return substr
+
+
+def bottom_right(input, row, col, rows, cols):
+    if (rows - row < 4) or (cols - col < 4):
+        return ""
+    substr = (
+        input[row][col]
+        + input[row + 1][col + 1]
+        + input[row + 2][col + 2]
+        + input[row + 3][col + 3]
+    )
+    return substr
+
+
+def bottom_left(input, row, col, rows, cols):
+    if (rows - row < 4) or (col < 3):
+        return ""
+    substr = (
+        input[row][col]
+        + input[row + 1][col - 1]
+        + input[row + 2][col - 2]
+        + input[row + 3][col - 3]
+    )
+    return substr
+
+
 input = [
     "MMMSXXMASM",
     "MSAMXMSMSA",
@@ -74,6 +110,9 @@ funcs = [
     top,
     bottom,
     top_right,
+    top_left,
+    bottom_right,
+    bottom_left,
 ]
 rows = len(input)
 for row in range(rows):
@@ -83,7 +122,6 @@ for row in range(rows):
             continue
         for f in funcs:
             substr = f(input, row, col, rows, cols)
-            print(substr)
             if is_xmas(substr):
                 counter += 1
 
