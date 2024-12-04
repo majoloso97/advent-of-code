@@ -90,18 +90,15 @@ def bottom_left(input, row, col, rows, cols):
     return substr
 
 
-input = [
-    "MMMSXXMASM",
-    "MSAMXMSMSA",
-    "AMXSXMAAMM",
-    "MSAMASMSMX",
-    "XMASAMXAMM",
-    "XXAMMXXAMA",
-    "SMSMSASXSS",
-    "SAXAMASAAA",
-    "MAMMMXMMMM",
-    "MXMXAXMASX",
-]
+def get_input(filepath):
+    lines = []
+    with open(filepath) as f:
+        for line in f:
+            lines.append(line)
+    return lines
+
+
+input = get_input("input.txt")
 
 counter = 0
 funcs = [
