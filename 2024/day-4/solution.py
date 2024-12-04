@@ -22,10 +22,10 @@ def top(input, row, col, rows, cols):
     if row < 3:
         return ""
     substr = (
-        input[row - 3][col]
-        + input[row - 2][col]
+        input[row][col]
         + input[row - 1][col]
-        + input[row][col]
+        + input[row - 2][col]
+        + input[row - 3][col]
     )
     return substr
 
