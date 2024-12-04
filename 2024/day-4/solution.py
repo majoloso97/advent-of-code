@@ -42,6 +42,18 @@ def bottom(input, row, col, rows, cols):
     return substr
 
 
+def top_right(input, row, col, rows, cols):
+    if (row < 3) or (cols - col < 4):
+        return ""
+    substr = (
+        input[row][col]
+        + input[row - 1][col + 1]
+        + input[row - 2][col + 2]
+        + input[row - 3][col + 3]
+    )
+    return substr
+
+
 input = [
     "MMMSXXMASM",
     "MSAMXMSMSA",
@@ -57,10 +69,11 @@ input = [
 
 counter = 0
 funcs = [
-    # right,
-    # left,
+    right,
+    left,
     top,
-    # bottom,
+    bottom,
+    top_right,
 ]
 rows = len(input)
 for row in range(rows):
