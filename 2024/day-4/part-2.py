@@ -23,18 +23,6 @@ def get_input(filepath):
 
 
 input = get_input("input.txt")
-# input = [
-#     "MMMSXXMASM",
-#     "MSAMXMSMSA",
-#     "AMXSXMAAMM",
-#     "MSAMASMSMX",
-#     "XMASAMXAMM",
-#     "XXAMMXXAMA",
-#     "SMSMSASXSS",
-#     "SAXAMASAAA",
-#     "MAMMMXMMMM",
-#     "MXMXAXMASX",
-# ]
 
 counter = 0
 rows = len(input)
