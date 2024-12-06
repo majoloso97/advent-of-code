@@ -39,18 +39,14 @@ unordered = []
 for page in pages:
     page_len = len(page)
     is_ordered = True
-    print(f"Page: {page}")
     for i in range(page_len):
         rule = order_rules.get(page[i])
-        print(f"Position {i}. Value {page[i]}. Rules: {rule}")
         if not rule:
             continue
         for k in range(i):
-            print(f"Inner position: {k}. Value {page[k]}")
             if page[k] in rule:
                 is_ordered = False
                 break
-        print(f"Currenty ordered: {is_ordered}")
         if not is_ordered:
             break
     if is_ordered:
@@ -61,11 +57,7 @@ for page in pages:
 total = 0
 for page in ordered:
     if len(page) % 2 == 0:
-        print("Even pages not considered")
         break
     position = int((len(page) + 1) / 2) - 1
     total += page[position]
-    print(f"Value {page[position]} in position {position}")
-print(f"Ordered:\n{ordered}")
-print(f"Unordered:\n{unordered}")
 print(total)
